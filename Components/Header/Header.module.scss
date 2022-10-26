@@ -1,0 +1,73 @@
+@import '../../styles/colors.scss';
+@import '../../styles/mixins.scss';
+
+.container {
+    position: fixed;
+    z-index: 2;
+    width: 100%;
+    @include blur-bg($bg-navBar, 10px);
+    .navBar {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 1rem 0;
+        gap: 1rem;
+        @media(max-width: 650px) {
+            justify-content: space-between;
+            padding: 1rem 2rem;
+        }
+        .logo {
+            @include text(1.1rem, $main-text-black, MPlusBold);
+            cursor: pointer;
+        }
+        .navItems {
+            display: flex;
+            flex-basis: 33.333%;
+            gap: 1rem;
+            @media(max-width: 650px) {
+                display: none;
+            }
+            .items {
+                @include text(.9rem, $main-text-black, MPlus);
+                text-transform: capitalize;
+                cursor: pointer;
+                &:hover {
+                    text-decoration: underline;
+                    text-underline-offset: 2px;
+                }
+            }
+        }
+        .toggleTheme {
+            cursor: pointer;
+            display: flex;
+            gap: .5rem;
+            align-items: center;
+            .menuButton {
+                display: none;
+                @media(max-width: 650px) {
+                    display: block;
+                }
+            }
+        }
+    }
+}
+.mobileContainer {
+    position: fixed;
+    top: 4rem;
+    right: 2rem;
+    display: none;
+    @include bg(#fecc40, 4px);
+    padding: .2rem .4rem;
+    width: 9rem;
+    z-index: 2;
+    &.opened {
+        display: block;
+        @media(min-width: 650px) {
+            display: none;
+        }
+    }
+    .activeItem {
+        @include text(1rem, $main-text, MPlusBold);
+        text-transform: capitalize;
+    }
+}

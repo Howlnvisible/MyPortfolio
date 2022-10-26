@@ -1,0 +1,19 @@
+@import '../../styles/colors.scss';
+@import '../../styles/mixins.scss';
+
+.container {
+  @include text(5.3rem, $body-bg, MPlusBold);
+  font-weight: bold;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 920px;
+  gap: 1.5rem;
+  line-height: 85%;
+  text-transform: uppercase;
+  @media(max-width: 600px) {
+    font-size: 3rem;
+  }
+}

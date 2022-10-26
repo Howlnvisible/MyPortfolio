@@ -1,0 +1,33 @@
+@import './colors.scss';
+@import './mixins.scss';
+@import './fonts.scss';
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+// html {
+//   font-size: calc(16px + 0.390625vw);
+// }
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  background-color: $body-bg;
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+  font-style: normal;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0px;
+  padding: 0px;
+}

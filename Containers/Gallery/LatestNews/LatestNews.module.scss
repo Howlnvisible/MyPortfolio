@@ -1,0 +1,29 @@
+@import '../../../styles/colors.scss';
+@import '../../../styles/mixins.scss';
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1.9rem;
+    position: relative;
+    @media (max-width: 1390px) {
+        align-items: center;
+    }
+    @media (max-width: 660px) {
+        width: 100%;
+        text-align: center;
+    }
+    .newsContainer {
+        display: grid;
+        grid-template-columns: auto auto;
+        gap: 1rem;
+        @media (max-width: 954px) {
+          grid-template-columns: auto;
+        }
+        @media(min-width: 2560px) {
+          justify-content: center;
+        }
+      }
+}

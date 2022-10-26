@@ -1,0 +1,14 @@
+@import '../../styles/colors.scss';
+@import '../../styles/mixins.scss';
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: .1rem;
+    @include text(.8rem, rgba(128, 128, 128, 1), MPlus);
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+}

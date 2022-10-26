@@ -1,0 +1,39 @@
+@import '../../../styles/colors.scss';
+@import '../../../styles/mixins.scss';
+
+.container {
+    width: 100%;
+    z-index: 10;
+    padding: 0px 1%;
+    .footer {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+        padding: 40px 1%;
+        position: relative;
+        z-index: 1;
+        @media(max-width: 1200px) {
+            flex-direction: column;
+        }
+        .author,
+        .middleSection,
+        .footerPolicy {
+            display: flex;
+            flex-basis: 33.333%;
+            align-items: center;
+            gap: 15px;
+            @include text(0.8rem, $main-text, MPlus);
+        }
+        .author {
+            justify-content: flex-start;
+            text-align: center;
+        }
+        .middleSection {
+            justify-content: center;
+        }
+        .footerPolicy {
+            justify-content: flex-end;
+        }
+    }
+}

@@ -1,0 +1,79 @@
+@import '../../styles/colors.scss';
+@import '../../styles/mixins.scss';
+
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 1.4rem;
+    max-width: 427px;
+    padding: 1.25rem;
+    @include blur-bg($bg-card, 100px);
+    @include rounded-border($border-main, 16px);
+    // @media(min-width: 2500px) {
+    //     max-width: 700px;
+    // }
+    &.showcase {
+        @include blur-bg($bg-card-showcase, 100px);
+    }
+    .bioContainer {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        @include rounded-border(transparent, 8px);
+        background: $bg-button-light;
+        padding: 1rem;
+        .headContainer {
+            text-transform: capitalize;
+            @include text(.9rem, $main-text-bold-dark, MPlusBold);
+        }
+        .bodyContainer {
+            text-transform: capitalize;
+            @include text(.8rem, $main-text, MPlus);
+        }
+    }
+    .progress {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        @include text(.8rem, $main-text-bold-dark, MPlusBold);
+    }
+    .bar {
+        height: 8px;
+        width: 100%;
+        background: $bg-button-light;
+        overflow: hidden;
+        border-radius: 8px;
+        position: relative;
+        display: flex;
+    }
+    .buttonImageContainer {
+        display: flex;
+        gap: .5rem;
+        .buttonImage {
+            padding: .1rem .6rem .2rem;
+            color: $main-text-bold-dark;
+            width: fit-content;
+            @include rounded-border($border-main, 4px);
+            cursor: pointer;
+            &:hover {
+                background: $bg-button-light;
+            }
+        }
+    }
+    .buttonText {
+        padding: .8rem 2.5rem;
+        @include rounded-border($border-main, 4px);
+        @include text(.5rem, $main-text, MPlusBold);
+        text-transform: uppercase;
+        width: fit-content;
+        letter-spacing: .18rem;
+        &:hover {
+            background: $bg-button-light;
+        }
+    }
+    .disabled {
+        user-select: none;
+        pointer-events: none;
+        opacity: .3;
+    } 
+}

@@ -1,0 +1,35 @@
+@import './colors.scss';
+
+@mixin text($fz, $color, $fontFamily: Montserrat) {
+    font-size: $fz;
+    color: $color;
+    font-family: $fontFamily;
+    font-style: normal;
+}
+
+@mixin auto-text($fz, $color) {
+    font-size: $fz;
+    color: $color;
+    font-weight: 300;
+}
+
+@mixin bg($bg, $radius) {
+    background: $bg;
+    border-radius: $radius;
+}
+
+@mixin blur-bg($bg, $blur) {
+    background: $bg;
+    backdrop-filter: blur($blur);
+}
+
+@mixin rounded-border($color, $radius) {
+    border: 1px solid $color;
+    border-radius: $radius;
+}
+
+@mixin center-children {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }

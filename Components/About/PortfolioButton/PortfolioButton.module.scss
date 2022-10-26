@@ -1,0 +1,16 @@
+@import '../../../styles/colors.scss';
+@import '../../../styles/mixins.scss';
+
+.portfolioButton {
+    @include bg($links-color, 4px);
+    margin: 0 auto;
+    width: fit-content;
+    padding: .5rem 1rem;
+    @include text(.8rem, $main-text, MPlusBold);
+    text-transform: uppercase;
+    cursor: pointer;
+    user-select: none;
+    &:hover {
+        background: #daa200;
+    }
+}

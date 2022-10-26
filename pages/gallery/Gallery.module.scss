@@ -1,0 +1,48 @@
+@import '../../styles/colors.scss';
+@import '../../styles/mixins.scss';
+
+  .overflowContainer {
+    overflow: hidden;
+    position: relative;
+    .image {
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+      filter: blur(10px);
+      width: 100vw;
+      height: 900px;
+      position: relative;
+      padding: 10rem 0;
+      transform: scale(1.1);
+      transition: background-image .4s linear;
+      }
+      .absoluteDiv {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 1;
+        width: 100%;
+        padding: 0 1rem;
+    }
+  }
+    
+  
+  .glowContainer {
+    padding: 17rem 1.8rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+    @media(max-width: 600px) {
+      padding: 10rem 1.8rem;
+    }
+}
+  .mainSection {
+    display: flex;
+    flex-direction: column;
+    gap: 150px;
+    padding: 0 1rem;
+}
+  

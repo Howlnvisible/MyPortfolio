@@ -1,0 +1,22 @@
+@import '../../styles/mixins.scss';
+@import '../../styles/colors.scss';
+
+.button {
+  width: fit-content;
+  padding: 0px 24px;
+  height: 48px;
+  cursor: pointer;
+  @include center-children();
+  @include rounded-border($border-main, 4px);
+  @include text(.8rem, $button-dark-text, MPlusBold);
+  user-select: none;
+  text-transform: capitalize;
+  &:hover {
+    background: $border-light;
+  }
+
+  &.disabled {
+    cursor: unset;
+    color: $border-light;
+  }
+}

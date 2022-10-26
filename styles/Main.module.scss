@@ -1,0 +1,29 @@
+@import '../styles/colors.scss';
+@import '../styles/mixins.scss';
+
+.container {
+    width: 100%;
+    position: relative;
+    padding-bottom: 4rem;
+    .innerContainer {
+        max-width: 55ch;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        padding: 10rem 2rem 0 2rem;
+        gap: 1rem;
+        .profile {
+            display: flex;
+        }
+        .postHolderContainer {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 1rem;
+            text-align: center;
+            cursor: pointer;
+            @media(max-width: 470px) {
+                grid-template-columns: repeat(1, minmax(0, 1fr));
+            }
+        }
+    }
+}

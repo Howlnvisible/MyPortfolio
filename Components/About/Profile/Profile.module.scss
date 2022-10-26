@@ -1,0 +1,27 @@
+@import '../../../styles/colors.scss';
+@import '../../../styles/mixins.scss';
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    @media(max-width: 400px) {
+        justify-content: center;
+        gap: 1rem;
+    }
+    .profile {
+        width: fit-content;
+        .title {
+            @include text(2rem, $main-text-black, MPlusBold);
+        }
+        .info {
+            @include text(1rem, $main-text-black, MPlus);
+        }
+    }
+    .image {
+        @include rounded-border($border-main, 50%);
+        overflow: hidden;
+        width: 90px;
+        height: 90px;
+    }
+}

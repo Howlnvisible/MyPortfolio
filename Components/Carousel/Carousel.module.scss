@@ -1,0 +1,55 @@
+@import '../../styles/colors.scss';
+@import '../../styles/mixins.scss';
+
+.container {
+    display: flex;
+    width: 47%;
+    justify-content: center;
+    @media(max-width: 900px) {
+        width: 100%;
+        padding: 0 1rem 1rem;
+    }
+}
+.cardContainer {
+    display: flex;
+    justify-content: center;
+    .card {
+        @include blur-bg($bg-button-light, 100px);
+        padding: 10px;
+    }
+}
+.itemContainer {
+    overflow: hidden;
+    max-width: fit-content;
+    .innerContainer {
+        display: flex;
+        transition: .5s;
+        .creepzContainer {
+            padding: 0 5px;
+            .imageContainer {
+                width: 54px;
+                height: 48px;
+                @include rounded-border($border-main, 8.5px);
+                cursor: pointer;
+                overflow: hidden;
+                box-sizing: border-box;
+            }
+            .selected {
+                @include rounded-border($border-active, 8.5px);
+            }
+        }
+    }
+}
+.button {
+    padding: .2rem;
+    @include rounded-border($border-main, 4px);
+    background: $bg-button-light;
+    display: flex;
+    align-items: center;
+    min-width: 40px;
+    cursor: pointer;
+    user-select: none;
+    &.showcase {
+        background: rgba(234, 221, 204, .5);
+    }
+}

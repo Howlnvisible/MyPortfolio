@@ -1,0 +1,94 @@
+@import '../../styles/colors.scss';
+@import '../../styles/mixins.scss';
+
+.container {
+  max-width: 100%;
+  padding: 1.25rem;
+  @include blur-bg($bg-card, 100px);
+  @include rounded-border($border-main, 16px);
+  display: flex;
+  gap: 1rem;
+  @media (max-width: 550px) {
+    flex-direction: column;
+    align-items: center;
+  }
+  @media(min-width: 2560px) {
+    max-width: 700px;
+  }
+  .imageContainer {
+    height: fit-content;
+    border-radius: 8px;
+    overflow: hidden;
+    min-width: 170px;
+    min-height: 170px;
+    width: 170px;
+    height: 170px;
+
+    @media (max-width: 550px) {
+      min-width: auto;
+      min-height: auto;
+      width: auto;
+      height: auto;
+    }
+
+    // @media (min-width: 2500px) {
+    //   width: 400px;
+    //   height: 370px;
+    // }
+  }
+
+  .secondContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 1rem;
+    @media (max-width: 550px) {
+      gap: 1rem;
+      align-items: center;
+      padding: 0;
+      max-width: fit-content;
+    }
+    .textSection {
+      display: flex;
+      flex-direction: column;
+      gap: .5rem;
+      @media (max-width: 550px) {
+        align-items: center;
+      }
+      .firstRow {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        .newsContainer {
+          @include rounded-border(transparent, 8px);
+          @include text(.8rem, $main-text, MPlusBold);
+          background: $border-main;
+          padding: .25rem .5rem;
+        }
+        .dateContainer {
+          @include text(.75rem, $main-text, MPlusBold);
+        }
+      }
+      .secondRow {
+        @include text(1rem, $main-text, MPlus);
+        max-width: 350px;
+        text-transform: capitalize;
+        @media (min-width: 2500px) {
+          @include text(1.5rem, $main-text, MPlus);
+          max-width: 600px;
+        }
+      }
+    }
+    .buttonContainer {
+      padding: .8rem 2.5rem;
+      @include rounded-border($border-light, 4px);
+      @include text(.5rem, $main-text, MPlusBold);
+      text-transform: uppercase;
+      width: fit-content;
+      letter-spacing: .18rem;
+      &:hover {
+        background: $border-light;
+      }
+    }
+  }
+}

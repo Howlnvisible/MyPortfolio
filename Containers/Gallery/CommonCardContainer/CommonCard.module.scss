@@ -1,0 +1,40 @@
+@import '../../../styles/colors.scss';
+@import '../../../styles/mixins.scss';
+
+.flexContainer {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    .flexStartContainer {
+        display: flex;
+        align-items: flex-start;
+    }
+    .flexEndContainer {
+        display: flex;
+        align-items: flex-end;
+    }
+}
+.desktopCommonCardContainer {
+    width: fit-content;
+    display: flex;
+    height: 800px;
+    justify-content: center;
+    gap: 1.9rem;
+    padding-top: 65px;
+    position: relative;
+    @media(max-width: 1000px) {
+       height: fit-content;
+       flex-direction: column;
+       padding-top: 20px;
+       align-items: center;
+    }
+    .sectionTitleContainer {
+        width: fit-content;
+        position: absolute;
+        right: 0;
+        top: 0;
+        @media(max-width: 1000px) {
+            position: relative;
+        }
+    }
+}
