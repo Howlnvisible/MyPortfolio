@@ -9,4 +9,18 @@
     gap: 1rem;
     justify-content: center;
     align-items: center;
+    opacity: 0;
+    &.show {
+        animation: fade-out 2s ease 4s;
+        animation-fill-mode: forwards;
+    }
+}
+
+@keyframes fade-out {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }

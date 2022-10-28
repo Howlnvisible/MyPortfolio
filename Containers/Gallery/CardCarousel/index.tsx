@@ -6,7 +6,7 @@ type CardCarouselProps = {
     cardCarouselItems: any;
     selected: any;
     setSelected: any;
-    windowDimension?: any; 
+    windowDimension?: any;
 }
 const CardCarousel = ({
     cardCarouselItems,
@@ -15,15 +15,15 @@ const CardCarousel = ({
     windowDimension
 }: CardCarouselProps) => {
     return (
-        <div className={styles.container}>
-                <CommonCard
-                    src={selected.src}
-                    title={selected.title}
-                    windowDimension={windowDimension}
-                    isShowcase
-                >
-                    {selected.children}
-                </CommonCard>
+        <div className={`${styles.container} ${styles.show}`}>
+            <CommonCard
+                src={selected.src}
+                title={selected.title}
+                windowDimension={windowDimension}
+                isShowcase
+            >
+                {selected.children}
+            </CommonCard>
             <Carousel
                 cardCarouselItems={cardCarouselItems}
                 selected={selected}

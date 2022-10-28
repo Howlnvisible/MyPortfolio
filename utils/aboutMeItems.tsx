@@ -9,7 +9,7 @@ export const aboutMeItems = {
         {
             subTitle: ``,
             info: `Aleksei is a frontend developer from Russia, with a passion for planning and building
-                websites. He has an experience of developing webpages for such company, as creepz.co.
+                websites. He has an experience of developing web3 projects.
                 On a free-time he likes to model 3D visuals and travel with his camera. What he films,
                 he uploads to his Youtube channel.`,
         }
@@ -26,12 +26,12 @@ export const aboutMeItems = {
         },
         {
             subTitle: `2022`,
-            info: `Works at creepz.co and starts his PhD.`,
+            info: `Works as a freelancer and starts his PhD.`,
         }
     ],
     interests: [
         {
-            info: `Art, Music, Video Games, Web Development, Video Edeting.`,
+            info: `Art, Music, Video Games, Web Development, Video Edeting, 3D Modeling`,
 
         }
     ],
@@ -57,7 +57,7 @@ export const aboutMeItems = {
         {
             src: `/Social/youtubeBunner.png`,
             title: `Days of Thunder // test render`,
-            subTitle: `latest Youtube Upload`,
+            subTitle: `Latest Youtube upload`,
             navigate: `https://www.youtube.com/watch?v=gVkWKTKkRhs`
         },
         {

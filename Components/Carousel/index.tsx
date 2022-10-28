@@ -4,7 +4,7 @@ import Image from 'next/image';
 
 type CarouselProps = {
     cardCarouselItems: any;
-    selected: boolean;
+    selected: any;
     setSelected: any;
     isShowcase?: boolean;
 }
@@ -22,15 +22,21 @@ const Carousel = ({
     const length = cardCarouselItems.length;
 
     const nextSlide = () => {
-        setCurrentImage(currentImage === length - 1 ? 
-            0 : currentImage + 1
-        );
+        setCurrentImage((prev) => {
+            let newIndex = prev === length - 1 ? 
+               0 : currentImage + 1
+            setSelected(cardCarouselItems[newIndex])
+            return newIndex;
+        });
     };
 
     const prevSlide = () => {
-        setCurrentImage(currentImage === 0 ? 
-            length - 1 : currentImage - 1
-        );
+        setCurrentImage((prev) => {
+            let newIndex = prev === 0 ?
+                length - 1 : currentImage - 1
+            setSelected(cardCarouselItems[newIndex])
+            return newIndex;
+        });
     }
 
     const containerRef = useRef<any>(null);
@@ -55,18 +61,19 @@ const Carousel = ({
         setContainerWidth(containerRef.current.offsetWidth)
     }, [containerRef?.current?.offsetWidth])
 
-    useEffect(() => {
-        let data = window?.localStorage.getItem('CARD_STATE');
-        if (data !== null) {
-            let dataParsed = JSON.parse(data)
-            setSelected(dataParsed)
-        }
-        return;
-    }, [])
+    // useEffect(() => {
+    //     let data = window?.localStorage.getItem('CARD_STATE');
+    //     if (data !== null) {
+    //         let dataParsed = JSON.parse(data)
+    //         setSelected(dataParsed)
+    //     }
+    //     setSelected()
+    //     return;
+    // }, [])
 
-    useEffect(() => {
-        window?.localStorage.setItem('CARD_STATE', JSON.stringify(selected))
-    }, [selected])
+    // useEffect(() => {
+    //     window?.localStorage.setItem('CARD_STATE', JSON.stringify(selected))
+    // }, [selected])
 
     const transform = useMemo(() => {
         const creepzCardCenter = (currentImage + 1) * cardWidth - cardWidth / 2

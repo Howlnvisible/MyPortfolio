@@ -9,16 +9,22 @@ import { aboutMeItems } from '../utils/aboutMeItems';
 import styles from '../styles/Main.module.scss';
 import { useEffect } from 'react';
 import AOS from 'aos';
+import 'aos/dist/aos.css';
 import InfoBar from '../Components/InfoBar';
+import Meta from '../Components/Meta';
 
 const AboutMe: NextPage = () => {
+    // const title = `Aleksei Bychkov`
+    // const description = `Welcome to my portfolio!`
     useEffect(() => {
         AOS.init({
-            duration: 800
+            duration: 1500
         });
     }, [])
     return (
         <>
+        {/* <Meta title={title} description={description} /> */}
+        <div data-aos='fade-up'>
             <Header />
             <div className={styles.container}>
                 <div className={styles.innerContainer}>
@@ -65,10 +71,9 @@ const AboutMe: NextPage = () => {
                     />
                 </div>
                 <Footer />
-            </div>
-            
+            </div> 
+        </div>
         </>
-        
     )
 }
 

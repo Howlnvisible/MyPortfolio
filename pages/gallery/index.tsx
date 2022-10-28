@@ -12,20 +12,24 @@ import Header from '../../Components/Header';
 import { useState } from 'react';
 import FooterGallery from '../../Containers/Gallery/FooterGallery';
 
+
 const Gallery: NextPage = () => {
     const windowDimension = useWindowDimensions();
+    // const [initSelectedValue] = useLocalStorage('CARD_STATE', JSON.stringify(galleryData.cardCarouselItems[0]));
     const [selected, setSelected] = useState<any>(galleryData.cardCarouselItems[0]);
     return (
         <>
-            <Header
-                 />
-                <div className={styles.overflowContainer}>
-                    <div
-                        className={styles.image}
-                        style={{
-                            backgroundImage: selected.url
-                        }}></div>
-                        <div className={styles.absoluteDiv}>
+            <Header />
+            <div className={styles.overflowContainer}>
+                <div
+                    className={styles.image}
+                    style={{
+                        backgroundImage: selected.url
+                    }}></div>
+                <div className={`${styles.showcaseContainer} ${styles.show}`}>
+                    THE SHOWCASE ROOM
+                </div>
+                <div className={styles.absoluteDiv}>
                     <CardCarousel
                         cardCarouselItems={galleryData.cardCarouselItems}
                         selected={selected}
@@ -33,7 +37,7 @@ const Gallery: NextPage = () => {
                         windowDimension={windowDimension}
                     />
                 </div>
-                </div>
+            </div>
             <div className={styles.glowContainer}>
                 <DarkTextGlowBehind
                     color={galleryData.darkTextGlowBehind.color}>
