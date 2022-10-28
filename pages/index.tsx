@@ -23,10 +23,12 @@ const AboutMe: NextPage = () => {
     }, [])
     return (
         <>
-        {/* <Meta title={title} description={description} /> */}
-        <div data-aos='fade-up'>
+            {/* <Meta title={title} description={description} /> */}
             <Header />
-            <div className={styles.container}>
+            <div 
+                className={styles.container} 
+                data-aos='fade-up'
+            >
                 <div className={styles.innerContainer}>
                     <InfoBar
                         infoBar={aboutMeItems.infoBar} />
@@ -71,8 +73,7 @@ const AboutMe: NextPage = () => {
                     />
                 </div>
                 <Footer />
-            </div> 
-        </div>
+            </div>
         </>
     )
 }

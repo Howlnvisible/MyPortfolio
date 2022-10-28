@@ -6,7 +6,7 @@ import PostHolder from '../../Components/PostHolder';
 import { aboutMeItems } from '../../utils/aboutMeItems';
 import styles from './Posts.module.scss';
 import AOS from 'aos';
-import 'aos/dist/aos.css'; 
+import 'aos/dist/aos.css';
 
 const Posts = () => {
     useEffect(() => {
@@ -15,15 +15,18 @@ const Posts = () => {
         })
     })
     return (
-        <div data-aos='fade-up'>
+        <>
             <Header />
-            <div className={styles.container}>
+            <div
+                className={styles.container}
+                data-aos='fade-up'
+            >
                 <div className={styles.innerContainer}>
                     <Block
                         title={`Popular Posts`}
                     />
                     <div className={styles.gridContainer}>
-                        {aboutMeItems.posts.map((item: any, i:any) => {
+                        {aboutMeItems.posts.map((item: any, i: any) => {
                             return (
                                 <PostHolder
                                     postItems={item}
@@ -33,9 +36,9 @@ const Posts = () => {
                         })}
                     </div>
                 </div>
-                <Footer />  
+                <Footer />
             </div>
-        </div>
+        </>
     )
 }
 
