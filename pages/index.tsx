@@ -14,8 +14,8 @@ import InfoBar from '../Components/InfoBar';
 import Meta from '../Components/Meta';
 
 const AboutMe: NextPage = () => {
-    // const title = `Aleksei Bychkov`
-    // const description = `Welcome to my portfolio!`
+    const title = `Aleksei Bychkov`
+    const description = `Welcome to my portfolio!`
     useEffect(() => {
         AOS.init({
             duration: 1500
@@ -23,7 +23,10 @@ const AboutMe: NextPage = () => {
     }, [])
     return (
         <>
-            {/* <Meta title={title} description={description} /> */}
+            <Meta 
+                title={title} 
+                description={description} 
+            />
             <Header />
             <div 
                 className={styles.container} 

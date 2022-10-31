@@ -8,10 +8,10 @@ export const aboutMeItems = {
     work: [
         {
             subTitle: ``,
-            info: `Aleksei is a frontend developer from Russia, with a passion for planning and building
-                websites. He has an experience of developing web3 projects.
-                On a free-time he likes to model 3D visuals and travel with his camera. What he films,
-                he uploads to his Youtube channel.`,
+            info: `I'm a frontend developer from Russia, with a passion for planning and building
+                websites. I have an experience of developing web3 projects, using technologies such as, Next.js, React, TypeScript.
+                On a free-time I do 3D modeling. Also, I'm studing Japanese and love to travel with my camera. 
+                What I film, goes to my Youtube channel.`
         }
     ],
     bio: [
@@ -26,12 +26,12 @@ export const aboutMeItems = {
         },
         {
             subTitle: `2022`,
-            info: `Works as a freelancer and starts his PhD.`,
+            info: `Work as a freelancer and start my PhD.`,
         }
     ],
     interests: [
         {
-            info: `Art, Music, Video Games, Web Development, Video Edeting, 3D Modeling`,
+            info: `Art, Music, Video Games, Web Development, Video Edeting, 3D Modeling, Language Learning`,
 
         }
     ],

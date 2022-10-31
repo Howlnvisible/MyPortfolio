@@ -12,6 +12,9 @@
         gap: 1rem;
         display: flex;
         flex-direction: column;
+        @media(max-width: 560px) {
+            width: 100%;
+        }
         .gridContainer {
             display: grid;
             grid-template-columns: repeat(2, minmax(0, 1fr));

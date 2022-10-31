@@ -1,16 +1,10 @@
 import Link from 'next/link';
 import styles from './Header.module.scss';
 import Image from 'next/image';
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
+import { useOutsideClickHandler } from '../../hooks/useOutsideClickHandler';
 
 const Header = () => {
-    const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
-    const [isActive, setIsActive] = useState<any>(null);
-
-    const handleClick = () => {
-        setIsMenuOpen((prev) => !prev);
-    };
-    
     const navBarItems = [
         {
             title: `posts`,
@@ -22,15 +16,29 @@ const Header = () => {
         },
         {
             title: `source`,
-            navigate: `/`
+            navigate: `https://github.com/Howlnvisible/MyPortfolio`
         }
     ]
+
+    const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
+    const [activeURL, setActiveURL] = useState<any>(``);
+    const ref = useRef<any>();
+
+    useEffect(() => {
+        setActiveURL(window.location.href);
+    }, [])
+
+    useOutsideClickHandler(ref, () => setIsMenuOpen(false))
+
+    const handleClick = () => {
+        setIsMenuOpen((prev) => !prev);
+    };
     return (
         <>
             <nav className={styles.container}>
                 <div className={styles.navBar}>
                     <Link href={`/`}>
-                        <div className={styles.logo}>
+                        <div className={styles.mainPageContainer}>
                             Aleksei Bychkov
                         </div>
                     </Link>
@@ -38,17 +46,24 @@ const Header = () => {
                         {navBarItems.map((item: any, i: any) => {
                             return (
                                 <Link 
-                                    href={item.navigate} 
+                                    href={item.navigate}
                                     key={`navBarItems-${i}`}
                                 >
-                                    <div className={styles.items}>
+                                    <div 
+                                        className={`${styles.items} 
+                                        ${activeURL.includes(item.title.toLowerCase()) 
+                                            ? styles.active
+                                            : ``
+                                        }`}
+                                        
+                                    >
                                         {item.title}
                                     </div>
                                 </Link>
                             )
                         })}
                     </div>
-                    <div className={styles.toggleTheme}>
+                    <div className={styles.logo}>
                         <div>
                             <Image
                                 src={`/Common/browserTheme.png`}
@@ -69,7 +84,14 @@ const Header = () => {
                     </div>
                 </div>
             </nav>
-            <div className={`${styles.mobileContainer} ${isMenuOpen ? styles.opened : ``}`}>
+            <div 
+                className={`${styles.mobileContainer} 
+                ${isMenuOpen 
+                    ? styles.opened 
+                    : ``
+                }`}
+                ref={ref}
+            >
                 {navBarItems.map((item:any, index:any) => {
                     return (
                         <Link 

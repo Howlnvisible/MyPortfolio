@@ -1,10 +1,10 @@
 import styles from './Button.module.scss';
 
 type ButtonProps = {
-  onClick?: () => void;
+  children: React.ReactNode;
   disabled?: boolean;
   min?: boolean;
-  children: React.ReactNode;
+  onClick?: () => void;
   className?: string;
 };
 

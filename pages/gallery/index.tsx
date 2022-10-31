@@ -11,14 +11,21 @@ import { galleryData } from '../../utils/galleryData';
 import Header from '../../Components/Header';
 import { useState } from 'react';
 import FooterGallery from '../../Containers/Gallery/FooterGallery';
+import Meta from '../../Components/Meta';
 
 
 const Gallery: NextPage = () => {
     const windowDimension = useWindowDimensions();
-    // const [initSelectedValue] = useLocalStorage('CARD_STATE', JSON.stringify(galleryData.cardCarouselItems[0]));
     const [selected, setSelected] = useState<any>(galleryData.cardCarouselItems[0]);
+    
+    const title = `Gallery ~ Aleksei Bychkov`
+    const description = `Watch my new works gallery showcase`
     return (
         <>
+            <Meta 
+                title={title}
+                description={description} 
+            />
             <Header />
             <div className={styles.overflowContainer}>
                 <div

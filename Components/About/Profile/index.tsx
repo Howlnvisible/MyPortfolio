@@ -2,7 +2,7 @@ import styles from './Profile.module.scss';
 import Image from 'next/image';
 
 type ProfileProps = {
-    profileItems:any;
+    profileItems: any;
 }
 const Profile = ({
     profileItems

@@ -61,20 +61,6 @@ const Carousel = ({
         setContainerWidth(containerRef.current.offsetWidth)
     }, [containerRef?.current?.offsetWidth])
 
-    // useEffect(() => {
-    //     let data = window?.localStorage.getItem('CARD_STATE');
-    //     if (data !== null) {
-    //         let dataParsed = JSON.parse(data)
-    //         setSelected(dataParsed)
-    //     }
-    //     setSelected()
-    //     return;
-    // }, [])
-
-    // useEffect(() => {
-    //     window?.localStorage.setItem('CARD_STATE', JSON.stringify(selected))
-    // }, [selected])
-
     const transform = useMemo(() => {
         const creepzCardCenter = (currentImage + 1) * cardWidth - cardWidth / 2
         const transformValue = creepzCardCenter - containerWidth / 2
@@ -117,7 +103,10 @@ const Carousel = ({
                                 >
                                     <div
                                         className={`${styles.imageContainer} 
-                                            ${currentImage === item.id ? styles.selected : ``}`}
+                                            ${currentImage === item.id 
+                                                ? styles.selected 
+                                                : ``
+                                        }`}
                                         onClick={() => { 
                                             setCurrentImage(item.id); 
                                             setSelected(item);
