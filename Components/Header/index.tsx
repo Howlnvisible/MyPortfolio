@@ -32,6 +32,7 @@ const Header = () => {
 
     const handleClick = () => {
         setIsMenuOpen((prev) => !prev);
+        console.log(handleClick)
     };
     return (
         <>
@@ -45,17 +46,17 @@ const Header = () => {
                     <div className={styles.navItems}>
                         {navBarItems.map((item: any, i: any) => {
                             return (
-                                <Link 
+                                <Link
                                     href={item.navigate}
                                     key={`navBarItems-${i}`}
                                 >
-                                    <div 
+                                    <div
                                         className={`${styles.items} 
-                                        ${activeURL.includes(item.title.toLowerCase()) 
-                                            ? styles.active
-                                            : ``
-                                        }`}
-                                        
+                                        ${activeURL.includes(item.title.toLowerCase())
+                                                ? styles.active
+                                                : ``
+                                            }`}
+
                                     >
                                         {item.title}
                                     </div>
@@ -74,38 +75,38 @@ const Header = () => {
                         <div
                             className={styles.menuButton}
                             onClick={handleClick}
+                            ref={ref}
                         >
                             <Image
                                 src={`/Common/menu.svg`}
                                 width={28}
                                 height={28}
                             />
+                            <div
+                                className={`${styles.mobileContainer} 
+                                ${isMenuOpen
+                                    ? styles.opened
+                                    : ``
+                                }`}
+                            >
+                                {navBarItems.map((item: any, index: any) => {
+                                    return (
+                                        <Link
+                                            href={item.navigate}
+                                            key={`navBarItems-${index}`}
+                                        >
+                                            <div
+                                                className={styles.activeItem}>
+                                                {item.title}
+                                            </div>
+                                        </Link>
+                                    )
+                                })}
+                            </div>
                         </div>
                     </div>
                 </div>
             </nav>
-            <div 
-                className={`${styles.mobileContainer} 
-                ${isMenuOpen 
-                    ? styles.opened 
-                    : ``
-                }`}
-                ref={ref}
-            >
-                {navBarItems.map((item:any, index:any) => {
-                    return (
-                        <Link 
-                            href={item.navigate} 
-                            key={`navBarItems-${index}`}
-                        >
-                            <div 
-                                className={styles.activeItem}>
-                                {item.title}
-                            </div>
-                        </Link>
-                    )
-                })}
-            </div>
         </>
     )
 }
