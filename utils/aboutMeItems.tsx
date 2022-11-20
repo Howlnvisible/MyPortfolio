@@ -2,7 +2,7 @@ export const aboutMeItems = {
     infoBar: `Hello! I'm a frontend developer from Russia.`,
     profileItems: {
         title: `Aleksei Bychkov`,
-        tag: `Digital Artist( Frontend / 3D )`,
+        tag: `Web frontend developer`,
         src: `/Social/profilePic.jpeg`
     },
     work: [
