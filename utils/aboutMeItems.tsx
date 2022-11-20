@@ -10,7 +10,7 @@ export const aboutMeItems = {
             subTitle: ``,
             info: `I'm a frontend developer from Russia, with a passion for planning and building
                 websites. I have an experience of developing web3 projects, using technologies such as, Next.js, React, TypeScript.
-                On a free-time I do 3D modeling. Also, I'm studing Japanese and love to travel with my camera. 
+                In my free-time I do 3D modeling. Also, I'm studying Japanese and love to travel with my camera. 
                 What I film, goes to my Youtube channel.`
         }
     ],
